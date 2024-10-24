@@ -2,7 +2,6 @@
 
 port="3113"
 dns="1.1.1.1"
-secret=""
 
-/root/wstunnel-scripts/wstunnel-linux server --dns-resolver dns://$dns --restrict-http-upgrade-path-prefix $secret ws://0.0.0.0:$port
+/root/wstunnel-scripts/wstunnel-linux server --dns-resolver dns://$dns --restrict-http-upgrade-path-prefix  $(cat /root/wstunnel-scripts/secret.txt) ws://0.0.0.0:$port
 
