@@ -26,6 +26,8 @@ dns="1.1.1.1"
 if you wish to run the server as a System Daemon(System D), copy the file `wstunnel-systemd.service` into `/etc/systemd/system`
 and then execute `sudo systemctl daemon-reload ` to load the systemd service. then you can start your service by running `sudo systemctl start wstunnel-systemd.service`
 
+NOTE: make sure you place the `wstunnel-scripts` folder under root. otherwise it won't work and you will need to change the paths in the files.
+
 you must remember that the SystemD service file will run `systemd-command.sh` which is a bit different than the normal file.
 
 **Client**
