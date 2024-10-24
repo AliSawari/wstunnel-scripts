@@ -4,7 +4,7 @@ simple server/client utility scripts to manage Wstunnel connections. ⚡
 
 both windows and linux binaries are supplied from the [Wstunnel](https://github.com/erebe/wstunnel) repository.
 which is a Network Tunnel over WebSocket connection Written in Rust.  
-please use the latest binaries from [their release page](https://github.com/erebe/wstunnel/releases).
+please download the latest binaries for your OS from [their release page](https://github.com/erebe/wstunnel/releases).
 
 ### Configure
 
