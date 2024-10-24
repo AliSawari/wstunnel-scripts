@@ -3,14 +3,16 @@
 simple server/client utility scripts to manage Wstunnel connections. ⚡
 
 both windows and linux binaries are supplied from the [Wstunnel](https://github.com/erebe/wstunnel) repository.
-which is a Network Tunnel over WebSocket connection Written in Rust.  
-please download the latest binaries for your OS from [their release page](https://github.com/erebe/wstunnel/releases).
+which is a Network Tunnel over WebSocket connection written in Rust.
 
 ### Configure
 
+First you need the Wstunnel binaries. please download the latest binaries for your OS from [their release page](https://github.com/erebe/wstunnel/releases).
+and place them in this directory. (filename should be `wstunnel`)
+
 edit the files before using, each script contains `ip` `localPort` and `remotePort`. 
 additionally, for more security, each script reads the contents of a `secret.txt` that should be existing in the same folder as the scripts.
-the contents of the file is supplied as an argument to `--restrict-http-upgrade-path-prefix` in order to accept certain connections and refuse others.
+the contents of the file is supplied as an argument to `--restrict-http-upgrade-path-prefix` in order to accept certain connections and refuse the ones that don't have the secret
 
 **Server**
 
@@ -26,7 +28,7 @@ dns="1.1.1.1"
 if you wish to run the server as a System Daemon(System D), copy the file `wstunnel-systemd.service` into `/etc/systemd/system`
 and then execute `sudo systemctl daemon-reload ` to load the systemd service. then you can start your service by running `sudo systemctl start wstunnel-systemd.service`
 
-NOTE: make sure you place the `wstunnel-scripts` folder under root. otherwise it won't work and you will need to change the paths in the files.
+NOTE: make sure you place the `wstunnel-scripts` folder under `/root` in your server. otherwise it won't work and you will need to change the paths in the files.
 
 you must remember that the SystemD service file will run `systemd-command.sh` which is a bit different than the normal file.
 
@@ -46,7 +48,6 @@ Windows script, **Which will Open up a SOCKS5 Proxy on the specified `localPort`
 ### License
 
 This Repo is under MIT License.
-
 
 
 Happy Hacking. 🥷
